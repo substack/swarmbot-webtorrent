@@ -1,0 +1,22 @@
+{
+  "name": "swarmbot-webtorrent",
+  "version": "1.0.0",
+  "description": "webtorrent seeding plugin for swarmbot",
+  "main": "index.js",
+  "keywords": [
+    "swarmlog",
+    "p2p",
+    "webtorrent",
+    "seed",
+    "seeder",
+    "plugin"
+  ],
+  "author": "substack",
+  "license": "BSD",
+  "dependencies": {
+    "hyperlog-seed": "^1.0.0",
+    "hyperlog-webtorrent-seed": "^1.0.2",
+    "subleveldown": "^2.1.0",
+    "webtorrent": ">=0.78.1 && <1.0.0"
+  }
+}
