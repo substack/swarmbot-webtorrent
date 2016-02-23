@@ -14,8 +14,8 @@ module.exports = function (bot, opts) {
   var db = bot.db('swarmbot-webtorrent')
   var client = webtorrent()
 
-  bot.on('seed-files', function (files) {
-    client.seed([files])
+  bot.on('seed-files', function (files, cb) {
+    client.seed([files], cb)
   })
   bot.on('open', function (id, log) {
     var seeder = hseed({
