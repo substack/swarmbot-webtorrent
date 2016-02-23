@@ -18,5 +18,17 @@
     "hyperlog-webtorrent-seed": "^1.0.2",
     "subleveldown": "^2.1.0",
     "webtorrent": ">=0.78.1 && <1.0.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substack/swarmbot-webtorrent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/substack/swarmbot-webtorrent/issues"
+  },
+  "homepage": "https://github.com/substack/swarmbot-webtorrent#readme"
 }
