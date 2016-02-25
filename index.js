@@ -17,6 +17,11 @@ module.exports = function (bot, opts) {
   bot.on('seed-files', function (files, cb) {
     client.seed(files, cb)
   })
+  bot.on('seed-list', function (cb) {
+    cb(null, client.torrents.map(function (t) {
+      return t.magnetURI
+    }))
+  })
   bot.on('open', function (id, log) {
     var seeder = hseed({
       db: bot.db(id),
