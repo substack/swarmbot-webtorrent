@@ -16,7 +16,12 @@ module.exports = function (bot, opts) {
   var client = webtorrent()
 
   bot.on('seed-files', function (files, cb) {
-    client.seed(files, cb)
+    client.seed(files, function (torrent) {
+      cb({
+        infoHash: torrent.infoHash,
+        magnetURI: torrent.magnetURI
+      })
+    })
   })
   bot.on('seed-list', function (cb) {
     cb(null, client.torrents.map(function (t) {
