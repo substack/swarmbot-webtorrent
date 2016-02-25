@@ -25,6 +25,19 @@ log.append({
 
 then this plugin will download and seed that torrent over webtorrent.
 
+# events
+
+## rpc.emitEvent('seed-files', files)
+
+Instruct the swarmbot-webtorrent plugin to seed files outside of the hyperlog.
+
+This is useful if the files are present on the local system and you need to tell
+swarmbot where the files are located before it can seed them.
+
+## rpc.emitEvent('seed-list', function (err, magnets) {})
+
+Request a list of magnet links that swarmbot-webtorrent is currently seeding.
+
 # install
 
 Install swarmbot-webtorrent into your swarmbot config directory with npm:
