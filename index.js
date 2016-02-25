@@ -4,7 +4,8 @@ var webtorrent = require('webtorrent')
 var sub = require('subleveldown')
 var path = require('path')
 
-var SEED = 's!'
+var PREFIX = 'webtorrent!'
+var SEED = 'seed!'
 
 module.exports = function (bot, opts) {
   if (!opts) opts = {}
@@ -24,8 +25,8 @@ module.exports = function (bot, opts) {
   })
   bot.on('open', function (id, log) {
     var seeder = hseed({
-      db: bot.db(id),
-      log: sub(db, SEED + id),
+      db: bot.db(PREFIX + SEED + id),
+      log: log,
       map: function (row) {
         if (row.link && /^magnet:/.test(row.link)) {
           return { type: 'put', link: row.link }
