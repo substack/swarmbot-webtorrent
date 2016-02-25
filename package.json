@@ -1,6 +1,6 @@
 {
   "name": "swarmbot-webtorrent",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "webtorrent seeding plugin for swarmbot",
   "main": "index.js",
   "keywords": [
