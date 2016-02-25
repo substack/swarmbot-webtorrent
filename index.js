@@ -15,7 +15,7 @@ module.exports = function (bot, opts) {
   var client = webtorrent()
 
   bot.on('seed-files', function (files, cb) {
-    client.seed([files], cb)
+    client.seed(files, cb)
   })
   bot.on('open', function (id, log) {
     var seeder = hseed({
