@@ -19,7 +19,10 @@ module.exports = function (bot, opts) {
     client.seed(files, function (torrent) {
       cb({
         infoHash: torrent.infoHash,
-        magnetURI: torrent.magnetURI
+        magnetURI: torrent.magnetURI,
+        size: torrent.files.reduce(function (sum, file) {
+          return sum + file.length
+        }, 0)
       })
     })
   })
