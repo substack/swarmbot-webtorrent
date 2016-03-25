@@ -20,9 +20,13 @@ module.exports = function (bot, opts) {
       cb({
         infoHash: torrent.infoHash,
         magnetURI: torrent.magnetURI,
-        size: torrent.files.reduce(function (sum, file) {
-          return sum + file.length
-        }, 0)
+        files: torrent.files.map(function (file) {
+          return {
+            name: file.name,
+            path: file.path,
+            length: file.length
+          }
+        })
       })
     })
   })
